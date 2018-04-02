@@ -1,0 +1,27 @@
+{% extends "main-template.html" %}
+{% block content %}
+	<div class="row">
+		<nav class="navbar navbar-default">
+			<ul class="nav navbar-nav">
+				<li><a href="{{ url_for('display_technologies') }}">Home</a></li>
+				<li><a href="{{ url_for('create_technology') }}">Add New Technology</a></li>
+			</ul>
+			<ul class="nav navba-nav navbar-right">
+				<a href="{{ url_for('disconnect') }}"><li><button type="button" class="btn btn-default navbar-btn">Log Out</button></li></a>
+			</ul>
+		</nav>
+	</div>
+	<div class="row">
+		<form method="post">
+			<label>Name:</label>
+			<input type="text" name="name">
+			<label>Manufacturer:</label>			
+			<input type="text" name="manufacturer">
+			<label>Price:</label>
+			<input type="text" name="price">
+			<label>Feature:</label>			
+			<input type="text" name="feature">
+			<button type="submit">Add</button>
+		</form>
+	</div>
+{% endblock %}

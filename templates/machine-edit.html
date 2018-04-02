@@ -1,0 +1,28 @@
+{% extends "main-template.html" %}
+{% block content %}
+	<div class="row">
+		<nav class="navbar navbar-default">
+			<ul class="nav navbar-nav">
+				<li><a href="{{ url_for('display_technologies') }}">Home</a></li>
+				<li><a href="{{ url_for('create_technology') }}">Add New Technology</a></li>
+				<li><a href="{{ url_for('create_machine', technology_id=technology.id) }}">Add New Machine</a></li>
+			</ul>
+			<ul class="nav navba-nav navbar-right">
+				<a href="{{ url_for('disconnect') }}"><li><button type="button" class="btn btn-default navbar-btn">Log Out</button></li></a>
+			</ul>
+		</nav>
+	</div>
+	<div class="row">
+		<h1>Edit {{ technology.name }}</h1>
+	</div>
+	<div class="row">
+		<form method="post">
+			<label>Name:</label>
+			<input type="text" name="name" value="{{ machine.name }}">
+			<input type="text" name="manufacturer" value="{{ machine.manufacturer }}">
+			<input type="text" name="price" value="{{ machine.price }}">
+			<input type="text" name="feature" value="{{ machine.feature }}">		
+			<button type="submit">Save</button>
+		</form>
+	</div>
+{% endblock %}

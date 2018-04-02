@@ -1,0 +1,30 @@
+{% extends "main-template.html" %}
+{% block content %}
+	<div class="row">
+		<nav class="navbar navbar-default">
+			<ul class="nav navbar-nav">
+				<li><a href="{{ url_for('display_technologies') }}">Home</a></li>
+				<li><a href="{{ url_for('create_technology') }}">Add New Technology</a></li>
+			</ul>
+			<ul class="nav navba-nav navbar-right">
+				<a href="{{ url_for('get_login') }}"><li><button type="button" class="btn btn-default navbar-btn">Log In</button></li></a>
+			</ul>
+		</nav>
+	</div>
+		<div class="row">
+		<h1 class=col-md-12>3D Printing Technology:</h1>
+	</div>
+	{% if messages %}
+		{% include "flash-message.html" %}
+	{% endif %}
+
+	{% for technology in technologies %}
+	<div class="row">
+		<div class="col-md-6 list-group items">
+			<a href="{{ url_for('display_machines', technology_id=technology.id) }}" class="list-group-item">
+			<h3>{{technology.name}}</h3>
+			</a>
+		</div>
+	</div>
+	{% endfor %}
+{% endblock %}

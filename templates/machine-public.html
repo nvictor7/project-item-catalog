@@ -1,0 +1,35 @@
+{% extends "main-template.html" %}
+{% block content %}
+	<div class="row">
+		<nav class="navbar navbar-default">
+			<ul class="nav navbar-nav">
+				<li><a href="{{ url_for('display_technologies') }}">Home</a></li>
+				<li><a href="{{ url_for('create_technology') }}">Add New Technology</a></li>
+				<li><a href="{{ url_for('create_machine', technology_id=technology.id) }}">Add New Machine</a></li>
+			</ul>
+			<ul class="nav navba-nav navbar-right">
+				<a href="{{ url_for('get_login') }}"><li><button type="button" class="btn btn-default navbar-btn">Log In</button></li></a>
+			</ul>
+		</nav>
+	</div>
+	<div class="row">
+		<span class="col-md-8 title-tab"><h1>Machine</h1></span>
+		<span class="col-md-4 title-tab"><p class="right-position">Creator: {{ creator.name }}</p></span>
+	</div>
+	<div class="row">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3>{{ machine.name }}</a></h3>
+			</div>			
+			<div class="panel-body">
+				<p><strong>Manufacturer</strong>: {{ machine.manufacturer }}</p>
+			</div>
+			<div class="panel-body">
+				<p><strong>Price</strong>: {{ machine.price }}</p>
+			</div>
+			<div class="panel-body">
+				<p><strong>Feature</strong>: {{machine.feature }}</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}

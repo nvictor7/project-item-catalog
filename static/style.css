@@ -1,0 +1,41 @@
+* {
+	box-sizing: border-box;
+}
+
+* {
+	font-family: sans-serif;
+}
+
+p {
+	font-size: 15px;
+}
+
+a {
+ 	font-size: 20px;
+ 	color: #0093B9;
+ }
+
+.top-banner {
+	width: 100%;
+	margin: 0;
+}
+
+.banner {
+	height: 180px;
+	background: url("/static/3d_banner.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.right-position {
+	float: right;
+}
+
+.items {
+	margin-bottom: 0;
+}
+
+.title-tab {
+	line-height: 6;
+}

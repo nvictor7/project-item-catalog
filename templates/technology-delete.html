@@ -1,0 +1,23 @@
+{% extends "main-template.html" %}
+{% block content %}
+	<div class="row">
+		<nav class="navbar navbar-default">
+			<ul class="nav navbar-nav">
+				<li><a href="{{ url_for('display_technologies') }}">Home</a></li>
+				<li><a href="{{ url_for('create_technology') }}">Add New Technology</a></li>
+			</ul>
+			<ul class="nav navba-nav navbar-right">
+				<a href="{{ url_for('disconnect') }}"><li><button type="button" class="btn btn-default navbar-btn">Log Out</button></li></a>
+			</ul>
+		</nav>
+	</div>
+	<div class="row">
+		<h2>Do you really want to delete {{ technology.name }}?</h2>
+	</div>
+	<div class="row">
+		<form method="post">
+			<button type="submit">Delete</button>
+			<a href="{{ url_for('display_technologies') }}"><button type="button">Cancel</button></a>
+		</form>
+	</div>
+{% endblock %}
